@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: rick-and-morty
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: rick-and-morty
+  template:
+    metadata:
+      labels:
+        app: rick-and-morty
+    spec:
+      containers:
+      - name: rick-and-morty
+        image: timshina/rick-and-morty:latest
+        ports:
+        - containerPort: 5000
