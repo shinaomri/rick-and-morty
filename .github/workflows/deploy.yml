@@ -45,6 +45,6 @@ jobs:
     - name: Test endpoints
       run: |
         kubectl port-forward service/rick-and-morty 5000:80 &
-        sleep 5
+        sleep 15
         curl http://localhost:5000/healthcheck
         curl http://localhost:5000/characters
